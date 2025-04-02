@@ -1,5 +1,8 @@
 # Math Visual Tests
 
+![Static Badge](https://img.shields.io/badge/C%2B%2B-deepskyblue?style=flat)
+![Static Badge](https://img.shields.io/badge/Custom%20Engine-dodgerblue?style=flat)
+
 ## Modes
 - Convex Scene
 - Pachinko Machine,
