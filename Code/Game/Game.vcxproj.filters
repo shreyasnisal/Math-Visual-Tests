@@ -1,0 +1,104 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Framework">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Gameplay">
+      <UniqueIdentifier>{9f87d256-79fa-4f47-aa73-1513d798d874}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Framework\GameModes">
+      <UniqueIdentifier>{d78e0885-22d7-4bdc-af1d-0f4a524591e7}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Main_Windows.cpp">
+      <Filter>Framework</Filter>
+    </ClCompile>
+    <ClCompile Include="App.cpp">
+      <Filter>Framework</Filter>
+    </ClCompile>
+    <ClCompile Include="Game.cpp">
+      <Filter>Framework</Filter>
+    </ClCompile>
+    <ClCompile Include="GameCommon.cpp">
+      <Filter>Framework</Filter>
+    </ClCompile>
+    <ClCompile Include="Tile.cpp">
+      <Filter>Gameplay</Filter>
+    </ClCompile>
+    <ClCompile Include="VisualTest2DPrimitives.cpp">
+      <Filter>Framework\GameModes</Filter>
+    </ClCompile>
+    <ClCompile Include="VisualTestRaycastVsDiscs.cpp">
+      <Filter>Framework\GameModes</Filter>
+    </ClCompile>
+    <ClCompile Include="VisualTestRaycastVsTiles.cpp">
+      <Filter>Framework\GameModes</Filter>
+    </ClCompile>
+    <ClCompile Include="VisualTestRaycastVsLineSegments.cpp">
+      <Filter>Framework\GameModes</Filter>
+    </ClCompile>
+    <ClCompile Include="VisualTestRaycastVsAABB2.cpp">
+      <Filter>Framework\GameModes</Filter>
+    </ClCompile>
+    <ClCompile Include="VisualTest3DGeometry.cpp">
+      <Filter>Framework\GameModes</Filter>
+    </ClCompile>
+    <ClCompile Include="VisualTestSplines.cpp">
+      <Filter>Framework\GameModes</Filter>
+    </ClCompile>
+    <ClCompile Include="VisualTestPachinkoMachine.cpp">
+      <Filter>Framework\GameModes</Filter>
+    </ClCompile>
+    <ClCompile Include="VisualTestConvexScene.cpp">
+      <Filter>Framework</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="App.hpp">
+      <Filter>Framework</Filter>
+    </ClInclude>
+    <ClInclude Include="Game.hpp">
+      <Filter>Framework</Filter>
+    </ClInclude>
+    <ClInclude Include="GameCommon.hpp">
+      <Filter>Framework</Filter>
+    </ClInclude>
+    <ClInclude Include="EngineBuildPreferences.hpp">
+      <Filter>Framework</Filter>
+    </ClInclude>
+    <ClInclude Include="Tile.hpp">
+      <Filter>Gameplay</Filter>
+    </ClInclude>
+    <ClInclude Include="VisualTest2DPrimitives.hpp">
+      <Filter>Framework\GameModes</Filter>
+    </ClInclude>
+    <ClInclude Include="VisualTestRaycastVsDiscs.hpp">
+      <Filter>Framework\GameModes</Filter>
+    </ClInclude>
+    <ClInclude Include="VisualTestRaycastVsTiles.hpp">
+      <Filter>Framework\GameModes</Filter>
+    </ClInclude>
+    <ClInclude Include="VisualTestRaycastVsLineSegments.hpp">
+      <Filter>Framework\GameModes</Filter>
+    </ClInclude>
+    <ClInclude Include="VisualTestRaycastVsAABB2.hpp">
+      <Filter>Framework\GameModes</Filter>
+    </ClInclude>
+    <ClInclude Include="VisualTest3DGeometry.hpp">
+      <Filter>Framework\GameModes</Filter>
+    </ClInclude>
+    <ClInclude Include="VisualTestSplines.hpp">
+      <Filter>Framework\GameModes</Filter>
+    </ClInclude>
+    <ClInclude Include="VisualTestPachinkoMachine.hpp">
+      <Filter>Framework\GameModes</Filter>
+    </ClInclude>
+    <ClInclude Include="VisualTestConvexScene.hpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="..\..\ReadMe.md" />
+  </ItemGroup>
+</Project>
