@@ -50,7 +50,7 @@ void App::Startup()
 	windowConfig.m_inputSystem = g_input;
 	//windowConfig.m_isFullScreen = true;
 	windowConfig.m_windowTitle = "(snisal) Math Visual Tests";
-	windowConfig.m_clientAspect = 2.f;
+	windowConfig.m_clientAspect = ASPECT;
 	g_window = new Window(windowConfig);
 
 	RenderConfig renderConfig;
@@ -59,7 +59,7 @@ void App::Startup()
 
 	DevConsoleConfig devConsoleConfig;
 	Camera devConsoleCamera = Camera();
-	devConsoleCamera.SetOrthoView(Vec2::ZERO, Vec2(2.f, 1.f));
+	devConsoleCamera.SetOrthoView(Vec2::ZERO, Vec2(ASPECT, 1.f));
 	devConsoleConfig.m_camera = devConsoleCamera;
 	devConsoleConfig.m_renderer = g_renderer;
 	devConsoleConfig.m_consoleFontFilePathWithNoExtension = "Data/Images/SquirrelFixedFont";
@@ -79,6 +79,8 @@ void App::Startup()
 	m_testTexture = g_renderer->CreateOrGetTextureFromFile("Data/Images/Test_StbiFlippedAndOpenGL.png");
 	g_squirrelFont = g_renderer->CreateOrGetBitmapFont("Data/Images/SquirrelFixedFont");
 	//m_testTexture = g_theRenderer->CreateOrGetTextureFromFile("Data/Images/TestUV.png");
+
+	SubscribeEventCallbackFunction("Quit", &App::HandleQuitRequested, *this, "Quits the application");
 
 	m_game = Game::CreateNewGameOfMode(m_currentMode);
 }
@@ -104,10 +106,9 @@ void App::RunFrame()
 
 }
 
-bool App::HandleQuitRequested()
+bool App::HandleQuitRequested([[maybe_unused]] EventArgs& args)
 {
 	m_isQuitting = true;
-
 	return true;
 }
 
@@ -115,8 +116,8 @@ void App::BeginFrame()
 {	
 	Clock::TickSystemClock();
 
-	g_eventSystem->Startup();
-	g_console->Startup();
+	g_eventSystem->BeginFrame();
+	g_console->BeginFrame();
 	g_input->BeginFrame();
 	g_window->BeginFrame();
 	g_renderer->BeginFrame();
@@ -131,7 +132,11 @@ void App::Update(float deltaSeconds)
 
 	if (g_input->WasKeyJustPressed(KEYCODE_ESC))
 	{
-		HandleQuitRequested();
+		FireEvent("Quit");
+	}
+	if (g_input->WasKeyJustPressed(KEYCODE_TILDE))
+	{
+		g_console->ToggleMode(DevConsoleMode::OPENFULL);
 	}
 	if (g_input->WasKeyJustPressed(KEYCODE_F8))
 	{
@@ -165,6 +170,7 @@ void App::Render() const
 	m_game->Render();
 	DebugRenderWorld(m_game->m_worldCamera);
 	DebugRenderScreen(m_game->m_screenCamera);
+	g_console->Render(AABB2(Vec2::ZERO, Vec2(SCREEN_SIZE_X, SCREEN_SIZE_Y)));
 }
 
 void App::EndFrame()

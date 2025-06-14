@@ -1,6 +1,13 @@
 #include "Game/GameCommon.hpp"
 
 BitmapFont* g_squirrelFont = nullptr;
+char const* CONVEX_SCENE_4CC_CODE = "GHCS";
+char const* CONVEX_HEADER_END_4CC_CODE = "ENDH";
+char const* CONVEX_CHUNK_4CC_CODE = "GHCK";
+char const* CONVEX_CHUNK_END_4CC_CODE = "ENDC";
+char const* CONVEX_SCENE_TOC_4CC_CODE = "GHTC";
+char const* CONVEX_SCENE_TOC_END_4CC_CODE = "ENDT";
+
 
 void DebugDrawRing(Vec2 const& center, float radius, float thickness, Rgba8 const& color)
 {

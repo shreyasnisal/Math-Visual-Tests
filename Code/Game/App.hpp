@@ -16,7 +16,7 @@ public:
 	void				RunFrame					();
 
 	bool				IsQuitting					() const		{ return m_isQuitting; }
-	bool				HandleQuitRequested			();
+	bool				HandleQuitRequested			(EventArgs& args);
 
 public:
 	Game*				m_game;
